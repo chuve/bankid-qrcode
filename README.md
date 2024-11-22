@@ -2,7 +2,9 @@
 
 [![NPM](https://nodei.co/npm/bankid-qrcode.png?stars&downloads)](https://nodei.co/npm/bankid-qrcode/)  
 
-A simple function helps to generate animated QR data strings for BankID
+A straightforward function for creating strings used in animated QR Codes for the Swedish BankID service.
+
+String pattern: `bankid.qrStartToken.time.qrAuthCode`
 
 [BankID official documentation](https://developers.bankid.com/getting-started/frontend/qr-code)  
 
