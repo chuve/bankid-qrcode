@@ -28,9 +28,14 @@ jobs:
           git config --global user.name "GitHub Actions"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
       - name: Change version
-        run: npm version --tag-version-prefix="" ${{ github.ref_name }}
+        run: npm version --no-git-tag-version --tag-version-prefix="" ${{ github.ref_name }}
       - name: Commit changes
-        run: git push origin master
+        run: |
+          git add .
+          git commit -m "Bump version: ${{ github.ref_name }}" || echo "No changes to commit"
+      - name: Push changes
+        run: |
+          git push origin master
 
   publish-npm:
     needs: apply-version-tag
