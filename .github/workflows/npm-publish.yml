@@ -28,9 +28,9 @@ jobs:
           git config --global user.name "GitHub Actions"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
       - name: Change version
-        - run: npm version --tag-version-prefix="" ${{ github.ref_name }}
+        run: npm version --tag-version-prefix="" ${{ github.ref_name }}
       - name: Commit changes
-        - run: git push origin master
+        run: git push origin master
 
   publish-npm:
     needs: apply_version_tag
