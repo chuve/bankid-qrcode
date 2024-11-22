@@ -23,11 +23,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: npm version --tag-version-prefix="" ${{ github.ref_name }}
-      - run: git push origin master
+      - name: Set up Git
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+      - name: Change version
+        - run: npm version --tag-version-prefix="" ${{ github.ref_name }}
+      - name: Commit changes
+        - run: git push origin master
 
   publish-npm:
-    needs: build
+    needs: apply_version_tag
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
