@@ -18,9 +18,6 @@
   ],
   "author": "Evgeny Chuvelev <e.chuvelev@gmail.com>",
   "license": "MIT",
-  "dependencies": {
-    "js-sha256": "^0.11.0"
-  },
   "devDependencies": {
     "@types/jest": "^29.5.14",
     "@types/node": "^22.9.1",
