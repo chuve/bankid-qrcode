@@ -18,7 +18,7 @@ jobs:
       - run: npm ci
       - run: npm test
 
-  apply-version-tag:
+  publish-npm:
     needs: build
     runs-on: ubuntu-latest
     steps:
@@ -37,13 +37,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          git push origin master || echo "Failed to push changes"
-
-  publish-npm:
-    needs: apply-version-tag
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
+          git push origin 
       - uses: actions/setup-node@v4
         with:
           node-version: 20
