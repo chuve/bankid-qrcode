@@ -16,9 +16,9 @@ String pattern: `bankid.qrStartToken.time.qrAuthCode`
 
 ### JavaScript
 ```JavaScript
-const createBankIdQrDataFunc = require('bankid-qrcode');
+const bankIdQrCode = require('bankid-qrcode');
 
-const getBankIdQrDataString = createBankIdQrDataFunc({
+const getBankIdQrDataString = bankIdQrCode.createBankIdQrDataFunc({
     orderTimeInSeconds: 1732308860,
     qrStartToken: '67df3917-fa0d-44e5-b327-edcc928297f8',
     qrStartSecret: 'd28db9a7-4cde-429e-a983-359be676944c'
