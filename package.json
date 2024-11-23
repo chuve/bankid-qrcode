@@ -12,11 +12,19 @@
     "test": "jest",
     "prepublishOnly": "npm test && npm run build"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/chuve/bankid-qrcode.git"
+  },
   "keywords": [
     "bankid",
     "qrcode"
   ],
   "author": "Evgeny Chuvelev <e.chuvelev@gmail.com>",
+  "homepage": "https://github.com/chuve/bankid-qrcode",
+  "bugs": {
+    "url": "https://github.com/chuve/bankid-qrcode/issues"
+  },
   "license": "MIT",
   "devDependencies": {
     "@types/jest": "^29.5.14",
